@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Furkat Tukhbatullin — Rasmiy sahifa</title>
+  <meta name="description" content="Furkat Tukhbatullin: rasmiy havolalar, videolar va maqolalar. Tarmoqli marketing bo‘yicha foydali materiallar." />
+  <meta property="og:title" content="Furkat Tukhbatullin — Rasmiy sahifa" />
+  <meta property="og:description" content="Rasmiy havolalar, YouTube videolar va maqolalar." />
+  <meta property="og:image" content="photo.jpg" />
+  <link rel="icon" href="photo.jpg" />
+  <style>
+    :root{
+      --bg:#f3f6fb;
+      --text:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --radius:20px;
+      --shadow:0 16px 40px rgba(2,6,23,.10);
+      --shadow-sm:0 10px 24px rgba(2,6,23,.08);
+      --accent:#111827;
+      --accent-2:#334155;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    .container{max-width:1100px; margin:0 auto; padding: 22px 16px;}
+    h1{margin:0 0 6px; font-size:clamp(26px,4vw,34px)}
+    h2{margin:26px 0 12px; font-size:clamp(20px,3.2vw,26px)}
+    .muted{color:var(--muted)}
+    /* Hero card */
+    .hero{display:grid; place-items:center; padding: 34px 16px 10px;}
+    .card{
+      width:min(92vw,720px);
+      background:var(--card); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:26px 24px; text-align:center;
+    }
+    .avatar{
+      width:160px; height:160px; border-radius:50%; object-fit:cover;
+      display:block; margin:0 auto 12px; box-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+    .socials{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+      background: var(--accent); color:#fff; padding: 12px 16px; border-radius: 14px;
+      font-weight:700; box-shadow: 0 12px 28px rgba(17,24,39,.18);
+      transition: transform .15s ease, background .2s ease;
+    }
+    .btn:hover{ background: var(--accent-2); transform: translateY(-2px); }
+    .btn svg{flex:0 0 20px}
+    /* Sections */
+    .grid{display:grid; grid-template-columns: repeat(12,1fr); gap:14px;}
+    .video-card{
+      grid-column: span 12; background:#fff; border-radius:16px; box-shadow:var(--shadow); padding:10px;
+    }
+    @media (min-width: 760px){ .video-card{grid-column: span 6;} }
+    .ratio{ position:relative; width:100%; padding-top:56.25%; overflow:hidden; border-radius:12px; }
+    .ratio iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+    /* Articles */
+    .articles{display:grid; grid-template-columns: repeat(12,1fr); gap:14px; margin-top:8px;}
+    .article{ grid-column: span 12; background:#fff; border-radius:16px; box-shadow:var(--shadow-sm); padding:16px; }
+    .article h3{margin:0 0 10px; font-size:18px}
+    .toggle{ display:inline-flex; align-items:center; gap:8px; background: var(--accent); color:#fff; text-decoration:none; padding:10px 14px; border-radius:12px; font-weight:700; transition:transform .15s ease; }
+    .toggle:hover{ transform: translateY(-1px); }
+    .content{ display:none; margin-top:12px; color:var(--text); }
+    .open .content{ display:block; }
+    .open .toggle::after{ content:" — Yopish"; font-weight:600; }
+    .toggle::after{ content:" — Batafsil o‘qish"; font-weight:600; }
+    footer{color:var(--muted); text-align:center; padding: 26px 0 40px}
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="card">
+      <img src="photo.jpg" alt="Furkat Tukhbatullin" class="avatar" width="160" height="160" />
+      <h1>Furkat Tukhbatullin</h1>
+      <div class="muted">Rasmiy havolalar</div>
+      <div class="socials">
+        <a class="btn" href="https://t.me/furkat_tukhbatullin" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.036 15.58l-.396 5.59c.566 0 .811-.243 1.104-.533l2.649-2.545 5.49 4.016c1.006.553 1.722.263 1.996-.93l3.616-15.802h.001c.322-1.402-.507-1.946-1.487-1.604L1.39 10.23c-1.347.468-1.327 1.14-.229 1.445l5.69 1.58L19.55 6.87c.747-.49 1.423-.218.866.272"/></svg>
+          Telegram
+        </a>
+        <a class="btn" href="https://www.youtube.com/@furkattukhbatullin" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1.1-1.1-1.9-2.2-2.2C19.2 3.5 12 3.5 12 3.5s-7.2 0-9.3.5c-1.1.3-1.9 1.1-2.2 2.2C0 8.3 0 12 0 12s0 3.7.5 5.8c.3 1.1 1.1 1.9 2.2 2.2 2.1.5 9.3.5 9.3.5s7.2 0 9.3-.5c1.1-.3 1.9-1.1 2.2-2.2.5-2.1.5-5.8.5-5.8s0-3.7-.5-5.8zM9.5 15.5v-7l6 3.5-6 3.5z"/></svg>
+          YouTube
+        </a>
+        <a class="btn" href="https://www.instagram.com/furkat.tukhbatullin" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .4 1.5.9.4.4.7.9.9 1.5.2.5.3 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.4 1-.9 1.5-.4.4-.9.7-1.5.9-.5.2-1.2.3-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.4-.4-.6-.2-1-.4-1.5-.9-.4-.4-.7-.9-.9-1.5-.2-.5-.3-1.2-.4-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.4.2-.6.4-1 .9-1.5.4-.4.9-.7 1.5-.9.5-.2 1.2-.3 2.4-.4C8.4 2.2 8.8 2.2 12 2.2zm0 2.2c-3.1 0-3.4 0-4.6.1-1 .1-1.6.2-2 .3-.5.2-.8.3-1 .6-.3.3-.5.6-.6 1-.1.4-.3 1-.3 2-.1 1.2-.1 1.5-.1 4.6s0 3.4.1 4.6c.1 1 .2 1.6.3 2 .2.5.3.8.6 1 .3.3.6.5 1 .6.4.1 1 .3 2 .3 1.2.1 1.5.1 4.6.1s3.4 0 4.6-.1c1-.1 1.6-.2 2-.3.5-.2.8-.3 1-.6.3-.3.5-.6.6-1 .1-.4.3-1 .3-2 .1-1.2.1-1.5.1-4.6s0-3.4-.1-4.6c-.1-1-.2-1.6-.3-2-.2-.5-.3-.8-.6-1-.3-.3-.6-.5-1-.6-.4-.1-1-.3-2-.3-1.2-.1-1.5-.1-4.6-.1zm0 2.3a5.3 5.3 0 1 1 0 10.6 5.3 5.3 0 0 1 0-10.6zm0 2.2a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.7-.9a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <h2>Videolar</h2>
+    <div class="grid">
+      <div class="video-card">
+        <div class="ratio">
+          <iframe src="https://www.youtube.com/embed/ufsH_-IY5K0"
+            title="YouTube video player" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="ratio">
+          <iframe src="https://www.youtube.com/embed/gBztRIYuVcs?start=68"
+            title="YouTube video player" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="ratio">
+          <iframe src="https://www.youtube.com/embed/PlY4HemLDTA"
+            title="YouTube video player" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="ratio">
+          <iframe src="https://www.youtube.com/embed/VO8B9E4geQQ?start=6"
+            title="YouTube video player" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:22px;">Maqolalar</h2>
+    <div class="articles">
+      <div class="article" id="a1">
+        <h3>Tarmoqli tadbirkorlikning afzalliklari va o‘ziga xos jihatlari</h3>
+        <a href="#a1" class="toggle" onclick="toggleArticle(event)">O‘qish</a>
+        <div class="content">
+          <p>Tarmoqli tadbirkorlar ko‘p, ammo to‘liq kuch-quvvat bilan ishlaydiganlar kam. Shuning uchun men MLMda biznes yuritishning afzalliklarini ko‘rsatishga va eslatishga bu postni yaratdim.</p>
+          <p>Va birinchi navbatda men tarmoqli biznesni an’anaviy biznes bilan solishtirmoqchiman. Faqat bitta xususiyatni olaylik - an’anaviy biznesni tashkil etuvchi tadbirkor o‘zining xarajatlari borligini aniq tushunadi: ijara, xodimlarning ish haqi, mahsulotlarni sotib olish, yetkazib berish va boshqalar. Tarmoqli biznesda bunday xarajatlar yo‘q, shuning uchun minimal xavf mavjud.</p>
+          <p>Ammo boshqa tomondan, bu fakt tarmoqli biznesidagi hamkorlarning harakatsizligiga olib keladi, chunki ular salbiy ko‘rsatmalarga o‘tishidan qo‘rqish yo‘q. Tarmoqli biznesi uchun esa bu ham afzallik, ham kamchilik.</p>
+          <p>Ikkinchisi - MLMdagi mahsulot. Ko‘p tarmoqli marketing kompaniyalarida mahsulot ekologik toza va yuqori sifatli. Mahsulotning afzalliklarini ko‘rsatish uchun xaridor shaxsiy maslahatga muhtoj. Bu yerda MLM biznesi paydo bo‘ldi, bu yerda reklama xarajatlari o‘rniga maslahatchilarga pul to‘lanadi.</p>
+          <p>Va shuni tushunish kerakki, siz shunday odam bo‘lishingiz, kompaniya uchun aylanma yaratishingiz va foydali biznes qurishingiz mumkin. Yana bir muhim xususiyat shundaki, biznesni boshqa birovning qo‘li bilan qurish mumkin. Va rahbar yoki direktor bo‘lish shart emas, shunchaki buni qanday qilishni ko‘rsatish va o‘rgatish orqali.</p>
+          <p>Va agar 10 kishi, masalan, oyiga 100 dollardan sotadigan bo‘lsa, aylanma 1000 dollarni tashkil qiladi. Ushbu aylanmadan kompaniya sizga foiz to‘laydi - bu qoldiq daromad. Bu qoldiq daromadni yaratish tarmoqchilar uchun asosiy hisoblanadi.</p>
+          <p>Xozirgi vaqtda MLM onlaynga o‘tdi va ijtimoiy tarmoqda faqat bitta akkaunt bilan katta biznes qurilmoqda.</p>
+          <p>Agar siz rivojlanmoqchi bo‘lsangiz, tarmoq sanoati - eng yaxshi joylardan biridir. Chunki siz o‘rganish, rivojlanish va o‘sishga juda och bo‘lgan odamlar orasida bo‘lasiz. Va shunday muhitga tushib qolsangiz, o‘zingiz o‘sishni boshlaysiz!</p>
+          <p>Millionerlar yaratiladigan tarmoq sanoatiga xush kelibsiz!</p>
+        </div>
+      </div>
+
+      <div class="article" id="a2">
+        <h3>Ustozni gapiga kirish kerakmi yoki o‘z yo‘lingizdan borish yaxshiroqmi?</h3>
+        <a href="#a2" class="toggle" onclick="toggleArticle(event)">O‘qish</a>
+        <div class="content">
+          <p>Aslida, ikkala yondashuvni ham birlashtira olish muhim — barchasi vaziyatga bog‘liq.</p>
+          <p>Asosiy qoida: ma’lumotni tahlil qilish va filtrlash. Agar ustozingiz eskirgan va samarasiz usullarni taklif qilsa, ularga e’tibor bermaslik yaxshiroqdir.</p>
+          <p>Usulning “o‘lik” ekanligini qanday aniqlash mumkin? Internetdagi TOP yetakchilari bugun nima qilishayotganiga qarang. Asosiy tendensiya — shaxsiy brendning rivojlanishi.</p>
+          <p>Agar murabbiy sizning brendingizni rivojlantirishga yordam bermaydigan biror narsani maslahat bersa, bu sizning vaqtingizni sarflashga arzimaydi.</p>
+          <p>Boshqa tomondan, ba’zida siz hamma narsani hammadan yaxshiroq bilishingizni o‘ylaysiz, lekin bu har doim ham shunday emas. Ba’zi hollarda, siz ambitsiyalaringizni bir chetga surib qo‘yishingiz va tavsiyalarga amal qilishingiz kerak, ayniqsa ustoz haqiqiy natijalarga ega va biznesga zamonaviy yondashuvga ega bo‘lgan shaxs bo‘lsa.</p>
+          <p>Xulosa: faqat usullari isbotlangan odamlarni tinglang va boshqalarning tajribasini o‘z qarashlaringiz bilan birlashtirishdan qo‘rqmang.</p>
+        </div>
+      </div>
+
+      <div class="article" id="a3">
+        <h3>Zamonaviy tarmoqli marketing biznesi tuzilishi qanday ishlaydi?</h3>
+        <a href="#a3" class="toggle" onclick="toggleArticle(event)">O‘qish</a>
+        <div class="content">
+          <p>Keling, buni ko‘rib chiqamiz.</p>
+          <p>Yakuniy maqsad — bu kompaniya bilan shartnoma imzolash yoki nomzod sizning jamoangizga qo‘shilishi. Ammo bundan oldin u bir necha asosiy bosqichlardan o‘tishi kerak:</p>
+          <ol>
+            <li>Taklifingiz haqida bilib olish</li>
+            <li>Qiziqish</li>
+            <li>Qo‘shilishni xohlash</li>
+            <li>To‘lovni amalga oshirish</li>
+          </ol>
+          <p>Ushbu bosqichlarning har biri alohida yondashuvni talab qiladi.</p>
+          <p><strong>Birinchi qadam — bu ma’lumot.</strong> Odamlarni sizning taklifingizdan xabardor qilish uchun reklama kerak. Ijtimoiy tarmoqlar, maqsadli yoki shaxsiy tavsiyalar orqali e’tiborni qay darajada jalb qilishingiz sizning afzalliklaringiz va vositalaringizga bog‘liq. Asosiysi, ma’lumotlar aniq bo‘lishi kerak va e’tiborni tortadigan.</p>
+          <p><strong>Ikkinchi qadam — bu qiziqish.</strong> Bu yerda “ilgaklar” muhim — bu reklamaning o‘zi va resurslaringiz dizayni, masalan, Instagram sahifangiz. Sahifangizga o‘tgan odam o‘z maqsadlariga erishishga yordam beradigan odam ekanligingizni tushunishi kerak. Agar sahifangiz ishonchli ko‘rinmasa, sizda mijozni yo‘qotish xavfi bor.</p>
+          <p><strong>Uchinchi qadam — bu istak/xohish.</strong> Ushbu bosqichda kuchli taqdimot kerak. Bu sizning biznesingizga qo‘shilish orqali, odam qanday foyda olishini ilhomlantirishi va ko‘rsatishi kerak.</p>
+          <p><strong>Yakuniy qadam — bu harakat.</strong> Agar hamma narsa to‘g‘ri bajarilgan bo‘lsa, nomzod boshlang‘ich paketni to‘lashga va jamoaning bir qismiga aylanishga tayyor.</p>
+          <p>Endi asosiy narsa: tuzilmani tushunish zaif tomonlarini aniqlashga yordam beradi.</p>
+          <p>🔸 Agar sizda kiruvchi nomzodlar oqimi bo‘lmasa, muammo trafikda — odamlar siz haqingizda bilishmaydi.</p>
+          <p>🔸 Agar sahifangizga kirganlar ko‘p bo‘lsa, lekin keyingi qadamlarga o‘tish bo‘lmasa, sahifangiz dizaynini qayta ko‘rib chiqing.</p>
+          <p>🔸 Agar nomzodlar taqdimotdan keyin ketishsa, uning mazmunini yaxshilang.</p>
+          <p>Butun tizim juda mantiqiy: tahlil qiling, sinab ko‘ring, sozlang — va albatta natija bo‘ladi!</p>
+        </div>
+      </div>
+
+      <div class="article" id="a4">
+        <h3>Tarmoqli biznesida muvaffaqiyatga erishish uchun qanday narx to‘lash kerak?</h3>
+        <a href="#a4" class="toggle" onclick="toggleArticle(event)">O‘qish</a>
+        <div class="content">
+          <p>1. Yuzlab fikrlar: “Bu piramida”, “Firibgarlik”, “Halol emas” — bularning barchasini (va bundan ham ko‘proq) eshitishga tayyor bo‘ling. Odamlar tushunmaydigan narsalaridan qo‘rqishadi, siz esa bunga xotirjam bo‘lishni o‘rganishingiz kerak.</p>
+          <p>2. Eski muhitning qandaydir qismi bilan xayrlashish. Ha, siz eski tanishlaringizni yo‘qotishingiz mumkin. Siz yomonlashganingiz uchun emas, balki siz o‘sishni boshlaganingiz uchun va ular hozirgi joylarida qolishni tanladilar. Vaqt o‘tishi bilan siz bu eng yaxshisi ekanligini tushunasiz, lekin boshida bu vaziyat sizni xafa qilishi mumkin.</p>
+          <p>3. Bir oz statistika. Bitta ishonchli hamkor topish uchun siz 15–20ta odam bilan muloqot qilishingiz kerak bo‘ladi, besh yulduzli hamkor topish uchun esa 100ta odam bilan. Bu illyuziya emas, bu haqiqat. Muvaffaqiyat kaliti — bitta hamkorga tikish emas, balki doimiy harakatdir.</p>
+          <p>4. Katta maqsadlar katta raqamlarni talab qiladi. Top-lider bo‘lishni xohlaysizmi? Bir yil ichida kamida 500ta uchrashuv o‘tkazishga tayyor bo‘ling. Ularning har biri maqsadingizga qadamdir.</p>
+          <p>5. Jamoa ichidagi kelishmovchiliklar. Odamlar keladi, ketadi, shikoyat qiladi va shubhalanadi. Bu sayohatning bir qismi. Boshqalarga yordam berish uchun o‘zingizdagi barqarorlikni saqlashni o‘rganing.</p>
+          <p>6. Ilhomlantirish qobiliyati. Tarmoqli biznesidagi muvaffaqiyat sahnadan gapirish va kelajak haqidagi tasavvurni sotish qobiliyatiga asoslanadi. Qo‘rqyapsizmi? Komfort zonangizdan chiqib ketishingiz kerak — bu sizning yangi darajaga chiptangiz.</p>
+          <p>7. Kompaniya tadbirlari muvaffaqiyatning katalizatoridir. Ikki-uch marta kompaniya tadbirida qatnashing. Bu shunchaki yig‘ilish emas. Sizni energiya, motivatsiya va bilim bilan to‘ldiradigan joy.</p>
+          <p>8. O‘zingizga investitsiya qilish. Kitoblar, kurslar, treninglar — bularning barchasi nafaqat xarajatlar, balki sizni yuqori samaradorlikka olib keladigan yo‘lingizdir.</p>
+          <p>9. Uzoq muddatli istiqbol. Tarmoq biznesidagi muvaffaqiyat sprint emas, balki marafondir. Natijalaringiz faqat doimiy harakat va barqarorlik bilan o‘sadi.</p>
+          <p>Bunday narxni to‘lash oson emas. Ammo tayyor bo‘lganlar nafaqat pul, balki yangi turmush darajasi, erkinlik va o‘ziga ishonchni ham oladi. Bunday narx to‘lashga tayyormisiz?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© <span id="y"></span> Furkat Tukhbatullin</footer>
+
+  <script>
+    function toggleArticle(e){
+      e.preventDefault();
+      const card = e.target.closest('.article');
+      card.classList.toggle('open');
+    }
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
